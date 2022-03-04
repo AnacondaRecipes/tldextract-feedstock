@@ -11,36 +11,33 @@ source:
 
 build:
   noarch: python
-  entry_points:
-    - tldextract = tldextract.cli:main
   number: 0
   script: {{ PYTHON }} -m pip install . -vv
+  entry_points:
+    - tldextract = tldextract.cli:main
 
 requirements:
   host:
+    - python
     - pip
-    - python >=3.6
     - setuptools
     - setuptools_scm
-
+    - wheel
   run:
-    - python >=3.6
-    - setuptools
+    - python >=3.7
+    - filelock >=3.0.8
     - idna
     - requests >=2.1.0
     - requests-file >=1.4
-    - filelock
 
 test:
   imports:
     - tldextract
-
-  commands:
-    - tldextract --help
-    - pip check
-
   requires:
     - pip
+  commands:
+    - pip check    
+    - tldextract --help
 
 about:
   home: https://github.com/john-kurkowski/tldextract
@@ -49,6 +46,7 @@ about:
   license_family: BSD
   summary: Accurately separate the TLD from the registered domain andsubdomains of a URL, using the Public Suffix List.
   dev_url: https://github.com/john-kurkowski/tldextract
+  doc_url: https://github.com/john-kurkowski/tldextract/blob/master/README.md
 
 extra:
   recipe-maintainers:
