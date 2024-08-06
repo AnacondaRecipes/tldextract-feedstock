@@ -1,5 +1,5 @@
 {% set name = "tldextract" %}
-{% set version = "3.2.0" %}
+{% set version = "5.1.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 3d4b6a2105600b7d0290ea237bf30b6b0dc763e50fcbe40e849a019bd6dbcbff
+  sha256: c9e17f756f05afb5abac04fe8f766e7e70f9fe387adb1859f0f52408ee060200
 
 build:
   noarch: python
@@ -36,7 +36,7 @@ test:
   requires:
     - pip
   commands:
-    - pip check    
+    - pip check
     - tldextract --help
 
 about:
