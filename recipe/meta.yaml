@@ -36,9 +36,15 @@ test:
     - tldextract
   requires:
     - pip
+    - pytest
+    - responses
+    - pytest-mock
   commands:
     - pip check
     - tldextract --help
+    - pytest tests -v --ignore=tests/test_release.py
+  source_files:
+    - tests
 
 about:
   home: https://github.com/john-kurkowski/tldextract
