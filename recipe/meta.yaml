@@ -46,6 +46,12 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   summary: Accurately separate the TLD from the registered domain andsubdomains of a URL, using the Public Suffix List.
+  description: |
+    tldextract accurately separates a URL's subdomain, domain, and public suffix, using the Public Suffix List (PSL).
+    Say you want just the "google" part of https://www.google.com. Everybody gets this wrong. Splitting on the "." and taking the 2nd-to-last element only works for simple domains, e.g. .com.
+    Consider http://forums.bbc.co.uk: the naive splitting method will give you "co" as the domain, instead of "bbc".
+    Rather than juggle TLDs, gTLDs, or ccTLDs yourself, tldextract extracts the currently living public suffixes according to the Public Suffix List.
+    A public suffix is also sometimes called an effective TLD (eTLD).
   dev_url: https://github.com/john-kurkowski/tldextract
   doc_url: https://github.com/john-kurkowski/tldextract/blob/master/README.md
 
