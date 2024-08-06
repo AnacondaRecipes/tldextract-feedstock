@@ -42,6 +42,7 @@ test:
   commands:
     - pip check
     - tldextract --help
+    # Test test_release.py requires syrupy
     - pytest tests -v --ignore=tests/test_release.py
   source_files:
     - tests
