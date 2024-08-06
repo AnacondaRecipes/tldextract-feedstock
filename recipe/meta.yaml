@@ -10,9 +10,9 @@ source:
   sha256: c9e17f756f05afb5abac04fe8f766e7e70f9fe387adb1859f0f52408ee060200
 
 build:
-  noarch: python
   number: 0
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  skip: True  # [py<38]
   entry_points:
     - tldextract = tldextract.cli:main
 
@@ -20,9 +20,10 @@ requirements:
   host:
     - python
     - pip
-    - setuptools
-    - setuptools_scm
+    - setuptools >=61.2
+    - setuptools_scm >=6.2
     - wheel
+    - toml
   run:
     - python >=3.7
     - filelock >=3.0.8
