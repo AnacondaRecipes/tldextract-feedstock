@@ -1,18 +1,18 @@
 {% set name = "tldextract" %}
-{% set version = "5.1.2" %}
+{% set version = "5.3.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: c9e17f756f05afb5abac04fe8f766e7e70f9fe387adb1859f0f52408ee060200
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: b3d2b70a1594a0ecfa6967d57251527d58e00bb5a91a74387baa0d87a0678609
 
 build:
   number: 0
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  skip: True  # [py<38]
+  skip: true  # [py<39]
   entry_points:
     - tldextract = tldextract.cli:main
 
@@ -22,8 +22,8 @@ requirements:
     - pip
     - setuptools >=61.2
     - setuptools_scm >=6.2
-    - wheel
     - toml
+    - setuptools-scm >=6.2
   run:
     - python
     - filelock >=3.0.8
