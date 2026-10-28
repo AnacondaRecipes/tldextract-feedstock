@@ -1,5 +1,5 @@
 {% set name = "tldextract" %}
-{% set version = "5.3.1" %}
+{% set version = "5.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: a72756ca170b2510315076383ea2993478f7da6f897eef1f4a5400735d5057fb
+  sha256: 6c9223212c15c25c0da2bf7313893c14f175cb36b64a0c42da67a468e0c61ee3
 
 build:
   number: 0
